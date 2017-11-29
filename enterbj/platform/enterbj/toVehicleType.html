@@ -1,0 +1,97 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>选择车辆类型</title>
+<link rel="stylesheet"
+	href="/enterbj/static_resources/enterbj/css/base.css" />
+<link rel="stylesheet"
+	href="/enterbj/static_resources/enterbj/css/jjz.css" />
+<script src="/enterbj/static_resources/enterbj/js/jquery-1.11.1.min.js"></script>
+<script src="/enterbj/static_resources/enterbj/js/move.js"></script>
+<script type="text/javascript"
+	src="/enterbj/static_resources/enterbj/js/selectCar.js"></script>
+<script type="text/javascript">
+	
+</script>
+
+
+</head>
+<body style="background: #fff;">
+	<div id="tanwindow2"></div>
+	<!-- 	loading -->
+	<div class="blac none">
+		<img src="/enterbj/static_resources/enterbj/images/loading.gif" alt="" />
+	</div>
+
+	<!-- 温馨提示弹窗 -->
+	<div class="Divblack none2" id="Divblack">
+		<div class="fbox">
+			<h2>进京证使用规定</h2>
+			<p>
+				<span class="red">注意：外埠危险化学品运输车辆、牵引车和挂车须在进京办证处窗口办理纸质进京通行证，利用“北京交警”APP办理的进京通行证无效！</span>
+			</p>
+			<p>
+				1、此证为非本市机动车（不含摩托车）进入六环路（不含）以内道路和六环路以外其他明令禁止通行区域行驶的通行证，有效期7天内。其中<span
+					class="red">持证载客汽车禁止在二环路主路（全线）、长安街及延长线新兴桥（不含）至国贸桥（不含）之间路段、广场东侧路、广场西侧路、北池子大街、南池子大街、北河沿大街、南河沿大街、府右街、北长街、南长街、人大会堂西路、正义路、台基厂大街、西安门大街（西四南大街至府右街之间路段）、文津街、景山前街、五四大街（北池子大街至东黄城根北街）、地安门内大街、景山后街、景山西街、景山东街、西什库大街西岔（西什库大街至西安门大街）通行。</span>此外大型载客汽车7时至20时禁止在二环路（含）以内道路及其他明令禁止非本市载客汽车通行道路行驶；其他载客汽车工作日7时至9时、17时至20时禁止进入五环（含）以内道路及其他明令禁止非本市载客汽车通行道路行驶。工作日9时至17时，执行五环路（含）以内道路车牌尾号高峰时段区域限行的交通管理措施，并与北京市载客汽车同步进行车牌尾号轮换。持证载货汽车6时至24时禁止进入六环路（含）以内道路以及其他明令禁止货运机动车通行的道路行驶，持证专项作业车6时至24时禁止进入六环路（不含）以内道路以及其他明令禁止专项作业车通行的道路行驶。2017年2月15日起，国Ⅰ及国Ⅱ排放标准轻型汽油车工作日（因法定节假日放假调休而调整为上班的星期六、星期日除外）禁止在本市五环路（不含）以内区域道路行驶。</p>
+			<p>		自2017年9月21日起，在六环路（含）内设立载货汽车低排放区，对在本市行政区域内道路上行驶的外省、区、市核发号牌（含临时号牌）的载货汽车应遵守以下规定：（一）每天6时至24时，六环路（含）以内道路禁止所有载货汽车通行。 （二）每天0时至6时，进入六环路（含）以内道路行驶的载货汽车（整车运送鲜活农产品的载货汽车除外），须办理进京通行证件。 （三）全天禁止国Ⅲ排放标准柴油载货汽车进入六环路（含）以内道路通行。自2017年9月21日至2019年9月20日每天0时至6时，以下两种车辆可以进入六环路（含）以内道路行驶： 1. 经相关管理部门确认为保障本市生产生活需求并办理进京通行证件的国Ⅲ排放标准柴油载货汽车。 2. 整车运送鲜活农产品的国Ⅲ排放标准柴油载货汽车。
+			</p>
+			<P>2、远郊区禁限措施以远郊区政府发布通告为准。</P>
+			<P>3、无有效检验合格标志以及持有黄色环保合格标志车辆使用此证无效，民警有权予以暂扣此证，发证机关事后将追究使用单位责任；此证不得涂改、伪造、塑封，遗失不补。</P>
+			<p>4、使用时须将此证放置在前风挡玻璃内部左下侧，以备检查。</p>
+			<p>5、自觉遵守道路交通安全法规，严禁“超员、超载、超速”以及“疲劳驾驶”等严重交通违法行为，服从交通民警的检查和指挥。</p>
+			<p style="text-align: right; padding: 0.2rem 0 1rem;">北京市公安局公安交通管理局</p>
+			<div class="timebtn_f">
+				<button class="btn" id="timebtn" onclick="divblackhide()"
+					disabled="disabled"></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="selectCarBox">
+		<h4>请选择车辆类型</h4>
+		<form action="/enterbj/platform/enterbj/applyBjMessage" id="submitForm"
+			method="post">
+			<input name="appsource" id="appsource" value="bjjj"
+				type="hidden" /> <input id="hiddentime" name="hiddentime"
+				type="hidden"> <input id="applyid" name="applyid"
+				value="026201711230032167184711" type="hidden" /> <input id="userid"
+				name="userid" value="cd98be995db64e629f4919571ed539f5" type="hidden" /> <input
+				id="applystatus" name="applystatus" value=""
+				type="hidden"> <input id="carid" name="carid"
+				value="11049323" type="hidden"> <input id="gpslon"
+				name="gpslon" value="116.341381" type="hidden"> <input
+				id="gpslat" name="gpslat" value="40.048269" type="hidden">
+			<input id="imei" name="imei" value="103f9a0a-fca8-31db-b382-3f523684a03f" type="hidden">
+			<input id="imsi" name="imsi" value="460022102644639" type="hidden">
+			<input id="cartype" name="cartype" value="02" type="hidden">
+			<input name="licenseno" id="licenseno" type="hidden"
+				value="冀T78Q29" /> <input type="hidden"
+				id="vehicletype" name="vehicletype" value="03" />
+			<div class="floatBox">
+				<div class="carBox selectCar" vehicletype="03">小型客车</div>
+				<div class="carBox" vehicletype="04">小型货车</div>
+				
+				<div class="carBox" vehicletype="02">大型货车</div>
+				<div class="carBox" vehicletype="52">小型新能源汽车</div>
+				<div class="carBox" vehicletype="51">大型新能源汽车</div>
+			</div>
+		</form>
+		<div><p style="
+		    margin-top: 2.5rem;
+		    text-align: center;
+		    font-size: 0.28rem;
+		    color: #ff0000;">温馨提示：请您正确选择车辆类型进行申请，车辆类型不正确将无法正常办理进京证</p></div>
+		<button class="submitCar" id="submitBtn">提交</button>
+	</div>
+
+</body>
+</html>

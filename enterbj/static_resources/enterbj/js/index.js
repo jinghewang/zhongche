@@ -21,6 +21,10 @@ function openDivblack() {
 		},
 		dataType : "json",
 		success : function(msg) {
+
+			//alert(JSON.stringify(msg));
+
+
 			if (msg.rescode == 200) {
 				var count = msg.count;
 				if (count > 0) {
